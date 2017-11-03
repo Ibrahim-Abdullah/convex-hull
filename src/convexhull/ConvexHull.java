@@ -255,9 +255,9 @@ public class ConvexHull {
     public double getDistanceFromLine(Point a, Point p1, Point pn) {
 
         double distanceBtnP1andPn = Math.sqrt(Math.pow((p1.x - pn.x), 2) + Math.pow((p1.y - pn.y), 2));
-        double numerator = Math.abs((a.x - p1.x) * (pn.y - p1.y) - (a.y - p1.y) * (pn.x - p1.x));
+        //double numerator = Math.abs((a.x - p1.x) * (pn.y - p1.y) - (a.y - p1.y) * (pn.x - p1.x));
         //double numerator = Math.abs(((pn.y-p1.y)*a.x)+((p1.x-pn.x)*a.y)+((p1.x * pn.y)-(p1.y *pn.x)));
-        //double numerator = Math.abs(((pn.x-p1.x)*(p1.y-a.y))-((p1.x-a.y)*(pn.y-p1.y)));
+        double numerator = Math.abs(((pn.x-p1.x)*(p1.y-a.y))-((p1.x-a.x)*(pn.y-p1.y)));
         return numerator / distanceBtnP1andPn;
     }
 
